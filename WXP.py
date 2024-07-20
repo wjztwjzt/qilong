@@ -1,11 +1,14 @@
-import requests,json
-def send(bt,xx):
+import requests,json,os
+
+uid = os.getenv("wxuid")
+wxtoken = os.getenv("wxtoken")
+def send(bt,xx,uid,wxtoken):
     url = "https://wxpusher.zjiecode.com/api/send/message"
     headers = {
         'Content-Type':'application/json',
     }
     data = {
-      "appToken":"AT_vFc4PrvLlS3Ufj4DD5Ljcp9Tsappp6ab",
+      "appToken":f"{wxtoken}",
       "content":f"{xx}",
       "summary":f"{bt}",
       "contentType":2,
@@ -13,7 +16,7 @@ def send(bt,xx):
           123
       ],
       "uids":[
-          "UID_IgMqGRXD3p0HJgvUmxqRbD9VxAox"
+          f"uid"
       ],
       "url":"https://wxpusher.zjiecode.com", 
       "verifyPay":False, 
@@ -29,13 +32,13 @@ def send(bt,xx):
         ss ="发送消息失败"
         #print(ss)
         return ss
-def send1(bt,xx,aa):
+def send1(bt,xx,aa,uid,wxtoken):
     url = "https://wxpusher.zjiecode.com/api/send/message"
     headers = {
         'Content-Type':'application/json',
     }
     data = {
-      "appToken":"AT_vFc4PrvLlS3Ufj4DD5Ljcp9Tsappp6ab",
+      "appToken":f"{wxtoken}",
       "content":f"{xx}",
       "summary":f"{bt}",
       "contentType":2,
@@ -43,7 +46,7 @@ def send1(bt,xx,aa):
           123
       ],
       "uids":[
-          "UID_IgMqGRXD3p0HJgvUmxqRbD9VxAox"
+          f"uid"
       ],
       "url":f"{aa}", 
       "verifyPay":False, 
