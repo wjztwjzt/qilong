@@ -65,9 +65,6 @@ def send1(bt,xx,aa):
         return ss
 
 def push(title: str, content: str) -> None:
-        """
-        通过 push+ 推送消息。
-        """
     if not PUSH_PLUS_TOKEN:
         print("PUSHPLUS 服务的 PUSH_PLUS_TOKEN 未设置!!\n取消推送")
         return
