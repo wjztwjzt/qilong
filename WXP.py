@@ -2,7 +2,7 @@ import requests,json,os
 
 uid = os.getenv("wxuid")
 wxtoken = os.getenv("wxtoken")
-def send(bt,xx,uid,wxtoken):
+def send(bt,xx):
     url = "https://wxpusher.zjiecode.com/api/send/message"
     headers = {
         'Content-Type':'application/json',
@@ -32,7 +32,7 @@ def send(bt,xx,uid,wxtoken):
         ss ="发送消息失败"
         #print(ss)
         return ss
-def send1(bt,xx,aa,uid,wxtoken):
+def send1(bt,xx,aa):
     url = "https://wxpusher.zjiecode.com/api/send/message"
     headers = {
         'Content-Type':'application/json',
