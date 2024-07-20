@@ -18,6 +18,8 @@ if result:
     #print("98号汽油为：" + result.group(3))
     #print("0号柴油为：" + result.group(4))
     print(f"{date},今日价格为:\n92号汽油为：{result.group(1)}\n95号汽油为：{result.group(2)}\n98号汽油为：{result.group(3)}\n0号柴油为：{result.group(4)}")
-    raw_main_WXP.send(f"{date}汽油价格"， f"今日价格为:\n92号汽油为：{result.group(1)}\n95号汽油为：{result.group(2)}\n98号汽油为：{result.group(3)}\n0号柴油为：{result.group(4)}")
+    xiao = f"92号汽油为：{result.group(1)}\n95号汽油为：{result.group(2)}\n98号汽油为：{result.group(3)}\n0号柴油为：{result.group(4)}"
+    biaoti = f"{date}汽油价格"
+    raw_main_WXP.send(biaoti， xiao)
 else:
     print("未匹配到价格信息")
